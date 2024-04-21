@@ -9,7 +9,7 @@ Lab FDDB Team 7 Mini-Project**
 We wanted to analyse what makes a "good" anime. Using the average community rating for an anime on website MyAnimeList as an estimate of the quality of an anime, we try to predict the rating for an anime using predictor variables from the dataset. 
 
 Link to dataset on Kaggle: https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database.
-Raw dataset extracted from Kaggle [here] (Datasets/anime.csv).
+Raw dataset extracted from Kaggle [here](Datasets/anime.csv).
 
 ### Tools we used
 We used Python in Jupyter Notebook, and the following libraries:
@@ -22,7 +22,7 @@ We used Python in Jupyter Notebook, and the following libraries:
 
 # Initial Data Processing
 
-Code section described below available [here] (Codes/Data extraction, cleaning and EDA.ipynb).
+Code section described below available [here](Codes/Data extraction, cleaning and EDA.ipynb).
 
 ## Data Cleaning
 
@@ -32,7 +32,7 @@ To reduce the variables involved, we grouped the least common 'types' entries to
 
 We also removed rows of anime with certain genres which reference inappropriate content for the purposes of this project.
 
-After cleaning the data, we are left with [this] (Datasets/anime_clean.csv).
+After cleaning the data, we are left with [this](Datasets/anime_clean.csv).
 
 ## Exploratory Data Analysis
 
@@ -48,7 +48,7 @@ Analysing the 'types' column, we looked at the number of anime corresponding to 
 
 To understand the 'episodes' column better, we plotted a histogram of the frequency of the number of episodes in an anime. To better show the number of anime with exceptionally large episode counts, we use a logarithmic scale in the y-axis, since they would otherwise be dwarfed by the vast majority of anime with less than 100 episodes. We then look at the relationship between the episode count and the community rating. The extremely long-running anime seem to have average ratings or better, which could be the reason for their longevity.
 
-Code section described below available [here] (Codes/Averages + Linear Regression.ipynb).
+Code section described below available [here](Codes/Averages + Linear Regression.ipynb).
 
 ### The 'genres' column
 
@@ -60,11 +60,11 @@ To understand the effect of individual genres on rating, we looked for anime wit
 
 Using the averages for each genre found previously, we replace the 'genres' value in each row with the equally-weighted average of the average ratings of its genres. Using the 'genres', 'types' and 'episodes' columns as predictors, we use linear regression to estimate the rating for each anime, with an 80--20 train--test split, performed on a fixed seed.
 
-The altered data frame used for this can be found [here] (Datasets/anime_clean_linear_regression.csv).
+The altered data frame used for this can be found [here](Datasets/anime_clean_linear_regression.csv).
 
 The performance of this model was rather poor, with an adjusted R^2^ value of ~0.142. The Mean Squared Error (MSE) of the model was ~0.9339 on the train set and ~0.9363 on the test set, with units of rating squared. The small MSE value in spite of the poor performance of the model can be explained by the significance of a change in 1 unit of rating. Looking at the raw error, we see that majority of the errors have magnitude between 0 and 1 compared with those with magnitude larger than 1. As a result, the effect of majority of points outweighs those much poorer predictions in the MSE.
 
-Code section described below available [here] (Codes/One_Hot_Encoding + Lasso_Ridge_ElasticNet Regression.ipynb).
+Code section described below available [here](Codes/One_Hot_Encoding + Lasso_Ridge_ElasticNet Regression.ipynb).
 
 ### More advanced models
 
@@ -72,7 +72,7 @@ We decided to use more advanced regression models to try to achieve better predi
 
 However, to achieve this, we first had to properly consider the effect of each genre separately, instead of using the aforementioned average of averages. Thus, we **one-hot encoded** each genre in 'genres', creating a new column for each genre, assigning a '1' in each row if the anime in that row had the corresponding genre and a '0' otherwise, then checking that these columns were of data type int64.
 
-The modified data after the one-hot encoding process can be found [here] (Datasets/anime_clean_encoded.csv).
+The modified data after the one-hot encoding process can be found [here](Datasets/anime_clean_encoded.csv).
 
 ### Regularised Linear Regressions
 
