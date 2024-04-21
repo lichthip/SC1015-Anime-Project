@@ -22,7 +22,7 @@ We used Python in Jupyter Notebook, and the following libraries:
 
 # Initial Data Processing
 
-Code section described below available [here](Codes/Data extraction, cleaning and EDA.ipynb).
+Code section described below available [here](Codes/Data_extraction_cleaning_and_EDA.ipynb).
 
 ## Data Cleaning
 
@@ -48,7 +48,7 @@ Analysing the 'types' column, we looked at the number of anime corresponding to 
 
 To understand the 'episodes' column better, we plotted a histogram of the frequency of the number of episodes in an anime. To better show the number of anime with exceptionally large episode counts, we use a logarithmic scale in the y-axis, since they would otherwise be dwarfed by the vast majority of anime with less than 100 episodes. We then look at the relationship between the episode count and the community rating. The extremely long-running anime seem to have average ratings or better, which could be the reason for their longevity.
 
-Code section described below available [here](Codes/Averages + Linear Regression.ipynb).
+Code section described below available [here](Codes/Averages_Linear_Regression.ipynb).
 
 ### The 'genres' column
 
@@ -64,7 +64,7 @@ The altered data frame used for this can be found [here](Datasets/anime_clean_li
 
 The performance of this model was rather poor, with an adjusted R^2^ value of ~0.142. The Mean Squared Error (MSE) of the model was ~0.9339 on the train set and ~0.9363 on the test set, with units of rating squared. The small MSE value in spite of the poor performance of the model can be explained by the significance of a change in 1 unit of rating. Looking at the raw error, we see that majority of the errors have magnitude between 0 and 1 compared with those with magnitude larger than 1. As a result, the effect of majority of points outweighs those much poorer predictions in the MSE.
 
-Code section described below available [here](Codes/One_Hot_Encoding + Lasso_Ridge_ElasticNet Regression.ipynb).
+Code section described below available [here](Codes/One_Hot_Encoding_Lasso_Ridge_ElasticNet_Regression.ipynb).
 
 ### More advanced models
 
