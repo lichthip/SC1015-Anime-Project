@@ -86,7 +86,7 @@ Between the Lasso and Ridge regressions is the **Elastic Net** regression, which
 
 We tuned the hyperparameters so that we could get the most optimal model of each regularised regression method using GridSearchCV, once again split into the same train--test set as used in the basic linear regression. 
 
-After finding the best hyperparameters, we compared the performance of each model. The model performance across the board was much better than the basic linear regression, with adjusted R^2^ of Lasso at ~0.2734, Ridge at ~0.2705, and Elastic Net at ~0.2718, of which the best model would be the one using Lasso regression.
+After finding the best hyperparameters, we compared the performance of each model. The model performance across the board was much better than the basic linear regression, with adjusted R<sup>2</sup> of Lasso at ~0.2734, Ridge at ~0.2705, and Elastic Net at ~0.2718, of which the best model would be the one using Lasso regression.
 
 ## Analysis and Insights
 
@@ -94,11 +94,11 @@ We printed the coefficients for all 37 columns in descending order for all 3 mod
 
 Surprisingly, despite the high average rating in single-genre anime, the 'Martial Arts' genre was estimated to have little effect on an anime's ratings under these more advanced models. This could be due to a discrepancy in the ratings for anime with only the Martial Arts genre and anime with a combination of Martial Arts and other genres.
 
-We had initially hypothesised that more common genres of anime such as 'Action' and 'Adventure' would have a more positive effect on ratings. They do still have a positive effect on ratings, but only rank 20^th^ and 22^nd^ respectively under the Lasso model, for example. This could be due to the sheer amount of anime with these genres causing a wide spread of quality and thus ratings.
+We had initially hypothesised that more common genres of anime such as 'Action' and 'Adventure' would have a more positive effect on ratings. They do still have a positive effect on ratings, but only rank 20<sup>th</sup> and 22<sup>nd</sup> respectively under the Lasso model, for example. This could be due to the sheer amount of anime with these genres causing a wide spread of quality and thus ratings.
 
 ## Limitations of our Analysis
 
-Our best 3 models only achieved an adjusted R^2^ of slightly over 0.27. This is likely due to the size of the dataset and the outliers in ratings, or perhaps reflect an underlying bias or variance that was not captured.
+Our best 3 models only achieved an adjusted R<sup>2</sup> of slightly over 0.27. This is likely due to the size of the dataset and the outliers in ratings, or perhaps reflect an underlying bias or variance that was not captured.
 
 We excluded the 'members' column from use in creating our models as its effect on model performance was significantly detrimental. This could cause some bias in our models as anime with a larger community of followers may be rated more highly.
 
