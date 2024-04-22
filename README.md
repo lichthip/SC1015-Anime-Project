@@ -62,7 +62,7 @@ Using the averages for each genre found previously, we replace the 'genres' valu
 
 The altered data frame used for this can be found [here](Datasets/anime_clean_linear_regression.csv).
 
-The performance of this model was rather poor, with an adjusted R<sup>2</sup> squared Error (MSE) of the model was ~0.9339 on the train set and ~0.9363 on the test set, with units of rating squared. The small MSE value in spite of the poor performance of the model can be explained by the significance of a change in 1 unit of rating. Looking at the raw error, we see that majority of the errors have magnitude between 0 and 1 compared with those with magnitude larger than 1. As a result, the effect of majority of points outweighs those much poorer predictions in the MSE.
+The performance of this model was rather poor, with an adjusted R<sup>2</sup> Mean Squared Error (MSE) of the model was ~0.9339 on the train set and ~0.9363 on the test set, with units of rating squared. The small MSE value in spite of the poor performance of the model can be explained by the significance of a change in 1 unit of rating. Looking at the raw error, we see that majority of the errors have magnitude between 0 and 1 compared with those with magnitude larger than 1. As a result, the effect of majority of points outweighs those much poorer predictions in the MSE.
 
 Code section described below available [here](Codes/One_Hot_Encoding_Lasso_Ridge_ElasticNet_Regression.ipynb).
 
